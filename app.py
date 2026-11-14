@@ -50,16 +50,16 @@ question = st.text_input("Your question", key="question", placeholder="e.g. Why 
 
 if st.button("Get briefing", type="primary") and question:
     if not api_key:
-        st.warning("Add your Gemini API key in the sidebar first (see README step 2).")
+        st.warning("Add a Gemini API key in the sidebar first (free at aistudio.google.com).")
         st.stop()
     with st.spinner("Reading the numbers..."):
         try:
             answer = ask(question, genai.Client(api_key=api_key))
         except errors.ClientError as e:
             if e.code == 429:
-                st.error("Free-tier limit reached. Wait a minute and try again.")
+                st.error("Free-tier limit reached. Wait a minute and try again (or tomorrow if the daily limit is used up).")
             elif e.code in (400, 401, 403):
-                st.error("Your Gemini API key looks invalid. See STEP-BY-STEP.md, step 5.")
+                st.error("That Gemini API key looks invalid. Copy it again from aistudio.google.com.")
             else:
                 st.error(f"Gemini error: {e.message}")
             st.stop()
