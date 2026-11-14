@@ -1,0 +1,10 @@
+date,team,event
+2025-03-10,Product,Launched mobile receipt scanning
+2025-09-02,Sales,Opened London office to sell Enterprise plan internationally
+2026-01-01,Finance,Enterprise plan list price raised 4%
+2026-04-20,Product,Released AI bookkeeping assistant (beta)
+2026-07-01,Finance,SMB plan price raised 15% ($120 to $138 per month)
+2026-07-01,Marketing,Paused all Social ads; budget moved to Events for Enterprise pipeline
+2026-08-12,Engineering,Release v4.2 shipped with a checkout bug affecting card payments
+2026-08-29,Engineering,Checkout bug fixed in v4.2.1
+2026-09-15,Customer Success,Started win-back email campaign for churned SMB customers

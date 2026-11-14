@@ -1,0 +1,165 @@
+﻿run_id,id,question,expected_answer,actual_answer,verdict,grader_reason
+7e47a7c31f,1,What was total revenue in Q3 2026 vs Q2 2026?,"Q3 about $14.2M vs Q2 about $12.8M, up roughly 11%.","Total revenue increased by 11.4% in Q3 2026 compared to Q2 2026.
+
+*   **Q3 2026 Revenue:** $14,214,000 [revenue_by_month.csv, Q3 2026]
+*   **Q2 2026 Revenue:** $12,755,100 [revenue_by_month.csv, Q2 2026]
+
+This growth was driven by the SMB segment, where revenue rose from $8,087,500 in Q2 to $9,164,800 in Q3 [revenue_by_month.csv, Q3 2026 vs Q2 2026]. This increase occurred despite a significant rise in churn, likely linked to the 15% SMB price increase implemented on July 1, 2026, and a checkout bug that persisted throughout August 2026 [business_events.csv].
+
+**Follow-up question:** How has the win-back email campaign launched on September 15 impacted churn rates for SMB customers in the most recent month?",FAIL,"Missing specific revenue amounts for Q3 and Q2, and missing sources in square brackets for the revenue figures."
+7e47a7c31f,2,Is SMB revenue growing or shrinking right now?,"Shrinking month over month since July: about $3.11M in Jul to $3.01M in Sep (around -3%), even though Q3 total is above Q2 because of the July price increase.","SMB revenue is currently shrinking, declining from $3.11M in July 2026 to $3.01M in September 2026, a 3.2% decrease [revenue_by_month.csv, Jul-Sep 2026].
+
+The primary drivers for this trend are:
+
+*   **Increased Churn:** SMB churn spiked significantly following the 15% price increase on July 1, 2026, rising from 785 in June to 1,345 in July, and remaining elevated at 1,264 in September [revenue_by_month.csv, Jun-Sep 2026].
+*   **Declining New Customer Acquisition:** New SMB sign-ups dropped from 1,206 in June to 943 in September, a 21.8% decrease, likely exacerbated by the pause of all Social media advertising on July 1, 2026 [revenue_by_month.csv, Jun-Sep 2026; business_events.csv, 2026-07-01].
+*   **Operational Friction:** A checkout bug in v4.2 (Aug 12–29) caused support tickets for ""Bugs"" to surge to 3,008 in August with resolution times ballooning to 27.3 hours and CSAT dropping to 73.9%, likely contributing to the churn [support_tickets.csv, Aug 2026; business_events.csv, 2026-08-12].
+
+**Suggested follow-up:** How are the win-back email campaigns initiated on September 15 performing in terms of recovering the churned SMB customer base?",FAIL,Missing the key fact that Q3 total revenue is higher than Q2 revenue.
+7e47a7c31f,3,How many active SMB customers did we have at the end of June vs end of September 2026?,"About 22,900 in June vs 21,800 in September, a loss of roughly 1,100 (about -5%).","We had 22,884 active SMB customers at the end of June 2026, which decreased to 21,791 by the end of September 2026, a decline of approximately 4.8%.
+
+The primary drivers for this shift include:
+
+*   **Increased Churn:** SMB churn spiked significantly in Q3, totaling 3,946 customers compared to 2,308 in Q2 [revenue_by_month.csv, Q3 vs Q2 segment totals]. This was likely driven by the 15% SMB price increase implemented on July 1st and the checkout bug that persisted throughout August [business_events.csv].
+*   **Reduced New Customer Acquisition:** New SMB customer sign-ups dropped to 2,853 in Q3 from 3,578 in Q2 [revenue_by_month.csv, Q3 vs Q2 segment totals]. This decline coincides with the July 1st decision to pause all Social media advertising [business_events.csv, marketing_spend.csv].
+*   **Support Quality Impact:** The checkout bug in August caused average resolution times for bugs to surge to 27.3 hours (up from 9.7 in Q2) and CSAT for bugs to drop to 73.9% [support_tickets.csv, Aug 2026].
+
+**Follow-up question:** How has the win-back email campaign initiated on September 15th performed in terms of re-acquiring churned SMB customers?",FAIL,Missing sources for the numbers in the answer key facts.
+7e47a7c31f,4,Which region had the biggest jump in SMB churn in Q3?,"West: SMB churn rose from about 754 in Q2 to 1,625 in Q3 (more than doubled).","The West region experienced the largest increase in SMB churn during Q3 2026.
+
+The primary drivers for this regional spike are:
+
+*   **West Region:** SMB churn rose from 754 in Q2 2026 to 1,625 in Q3 2026, an increase of 871 customers or 115.5% [revenue_by_month.csv, Q2/Q3 2026].
+*   **East Region:** SMB churn rose from 673 in Q2 2026 to 999 in Q3 2026, an increase of 326 customers or 48.4% [revenue_by_month.csv, Q2/Q3 2026].
+*   **Central Region:** SMB churn rose from 508 in Q2 2026 to 765 in Q3 2026, an increase of 257 customers or 50.6% [revenue_by_month.csv, Q2/Q3 2026].
+
+This churn surge likely correlates with the 15% SMB price increase implemented on July 1, 2026, and the checkout bug in v4.2 that persisted from August 12 to August 29, 2026, which caused a significant spike in bug-related support tickets and a drop in CSAT [business_events.csv; support_tickets.csv, Q3 2026].
+
+**Follow-up question:** How has the win-back email campaign initiated on September 15 performed in terms of recovering churned SMB customers in the West region?",PASS,All key facts present
+7e47a7c31f,5,Why are we losing SMB customers?,"Mainly the 15% SMB price increase on Jul 1 (churn jumped right after, worst in the West), plus fewer new SMB customers after Social ads were paused. Should say cause is likely/inferred.","SMB customer churn spiked significantly in Q3 2026, driven by a combination of price sensitivity and a critical technical failure.
+
+*   **Price Increase Impact:** Churned SMB customers rose from 2,308 in Q2 to 3,946 in Q3 2026, a 71% increase [revenue_by_month.csv, Q2/Q3 2026]. This aligns with the 15% SMB price hike implemented on July 1, 2026 [business_events.csv].
+*   **Technical Issues:** Support tickets for ""Bugs"" surged to 5,279 in Q3 from 3,135 in Q2, with average resolution time ballooning to 17 hours (up from 9.7) [support_tickets.csv, Q2/Q3 2026]. This is likely tied to the v4.2 checkout bug that prevented card payments between August 12 and August 29, 2026 [business_events.csv].
+*   **Regional Concentration:** The West region experienced the highest churn volume, losing 1,625 SMB customers in Q3 compared to 754 in Q2 [revenue_by_month.csv, Q3 2026].
+*   **Lead Decline:** New SMB customer sign-ups dropped from 3,578 in Q2 to 2,853 in Q3, likely exacerbated by the pause of all Social media ads on July 1, 2026 [marketing_spend.csv, Q2/Q3 2026].
+
+**Follow-up question:** How has the win-back email campaign launched on September 15 performed in terms of re-acquiring the SMB customers lost during the Q3 checkout outage?",PASS,All key facts present
+7e47a7c31f,6,What happened to new SMB customer sign-ups in Q3?,"Down about 20%: roughly 3,580 in Q2 to 2,850 in Q3, timed with pausing Social ads on Jul 1.","New SMB customer sign-ups dropped significantly in Q3 2026, falling to 2,853 from 3,578 in Q2 2026, a 20.3% decrease [revenue_by_month.csv, Q3 2026 vs Q2 2026].
+
+The primary drivers for this decline include:
+
+*   **Price Increase:** On July 1, 2026, the SMB plan price was raised by 15% (from $120 to $138/month), which likely contributed to the immediate drop in new sign-ups [business_events.csv, 2026-07-01].
+*   **Marketing Shift:** The company paused all Social media advertising on July 1, 2026, moving that budget to Enterprise-focused Events [business_events.csv, 2026-07-01]. Consequently, total leads dropped from 4,914 in June to 3,505 in July [marketing_spend.csv, 2026-06 vs 2026-07].
+*   **Support Issues:** A checkout bug in v4.2 (active Aug 12–29) caused a spike in support tickets and a sharp decline in CSAT, which likely hindered conversion for the remainder of the quarter [business_events.csv, 2026-08-12; support_tickets.csv, 2026-08].
+
+**Follow-up question:** How has the win-back email campaign for churned SMB customers, which started on September 15, performed in terms of conversion rates so far?",FAIL,"The answer includes an additional cause (Price Increase and Support Issues) not present in the answer key, and fails to identify the pausing of Social ads as the specific primary driver mentioned in the key, instead diluting it among other factors."
+7e47a7c31f,7,Was pausing Social ads a good decision?,"Social leads went from about 1,900/month to zero; Events spend tripled but produced only ~700-800 leads/month; SMB new customers fell ~20%. Enterprise kept growing. Should be balanced and note the data can't prove Enterprise growth came from Events.","Pausing Social ads was likely a poor decision, as it coincided with a significant decline in new customer acquisition and a sharp increase in churn.
+
+The primary drivers for this negative trend include:
+
+*   **Drop in New Customers:** Total new customer sign-ups fell from 3,647 in Q2 2026 to 2,916 in Q3 2026, a 20% decrease [revenue_by_month.csv, Q2/Q3 2026].
+*   **Surge in Churn:** Churn increased from 2,321 in Q2 2026 to 3,961 in Q3 2026, a 71% increase [revenue_by_month.csv, Q2/Q3 2026].
+*   **Lead Generation Collapse:** Monthly leads dropped from an average of ~4,900 in Q2 2026 to ~3,450 in Q3 2026 following the July 1st pause of Social ads [marketing_spend.csv, Q2/Q3 2026].
+
+While the budget was moved to Events to support the Enterprise pipeline, the data shows that the SMB segment—which accounts for the vast majority of our customer base—suffered immediately after the July 1st price increase and the removal of Social ads [business_events.csv, 2026-07-01]. Additionally, the checkout bug in August likely exacerbated churn and support volume [business_events.csv, 2026-08-12; support_tickets.csv, 2026-08].
+
+**Suggested follow-up:** Should we reinstate Social ads to restore our top-of-funnel lead volume, and what is the current status of the SMB win-back campaign started in mid-September?",FAIL,The answer failed to mention that the Events spend tripled and failed to note that the data cannot prove Enterprise growth came from the Events spend.
+7e47a7c31f,8,What happened with customer support in August 2026?,"Bug tickets spiked to about 3,000 (vs ~1,180 in July), resolution time rose to ~27 hours and Bugs CSAT fell to ~74%, linked to the v4.2 checkout bug shipped Aug 12 and fixed Aug 29.","Customer support experienced a significant performance decline in August 2026, primarily driven by a surge in bug-related tickets and increased resolution times.
+
+*   **Ticket Volume:** Bug-related support tickets spiked to 3,008 in August, a 155% increase from 1,179 in July [support_tickets.csv, Aug 2026].
+*   **Resolution Time:** Average resolution time for bugs jumped to 27.3 hours, up from 12.4 hours in July [support_tickets.csv, Aug 2026].
+*   **Customer Satisfaction:** CSAT for bugs dropped to 73.9% in August, down from 90.4% in July [support_tickets.csv, Aug 2026].
+
+This decline was likely caused by the release of v4.2 on August 12, which introduced a checkout bug affecting card payments [business_events.csv, Aug 2026]. The issue was resolved on August 29, and by September, bug-related tickets returned to normal levels (1,092) with improved resolution times (11.2 hours) [support_tickets.csv, Sep 2026].
+
+**Follow-up question:** How did the checkout bug and subsequent support delays impact our SMB churn rate in August compared to previous months?",PASS,All key facts present
+7e47a7c31f,9,Why did billing tickets go up in July?,"Billing tickets roughly doubled (about 900 in June to 1,800 in July) and CSAT fell, likely due to the 15% SMB price increase on Jul 1.","Billing support tickets increased significantly in July 2026, likely due to the 15% SMB plan price increase implemented on July 1, 2026.
+
+*   **Ticket Volume:** Billing tickets rose to 1,813 in July 2026, a 100.8% increase from the 903 tickets recorded in June 2026 [support_tickets.csv, July/June 2026].
+*   **Customer Satisfaction:** CSAT for billing dropped to 79.2% in July 2026, down from 87.7% in June 2026 [support_tickets.csv, July/June 2026].
+*   **Business Context:** The price hike for SMB plans (from $120 to $138/month) took effect on July 1, 2026, coinciding with the spike in billing-related inquiries [business_events.csv, July 2026].
+
+**Follow-up question:** How has the win-back email campaign started in mid-September impacted the churn rate for SMB customers compared to the peak churn observed in July and August?",PASS,All key facts present
+7e47a7c31f,10,Did support recover in September?,"Yes: Bug tickets back to about 1,100 and Billing to about 930, CSAT back in the high 80s.","Support quality showed a strong recovery in September 2026, returning to pre-crisis performance levels.
+
+*   **Resolution Speed:** Average resolution time for ""Bugs"" dropped significantly to 11.2 hours in September, down from a peak of 27.3 hours in August [support_tickets.csv, Sep 2026].
+*   **Customer Satisfaction:** The CSAT for ""Bugs"" rebounded to 86.2% in September, recovering from the 73.9% low recorded in August [support_tickets.csv, Sep 2026].
+*   **Ticket Volume:** Total bug-related tickets normalized to 1,092 in September, down from the 3,008 tickets logged during the August checkout bug incident [support_tickets.csv, Aug/Sep 2026].
+
+The recovery aligns with the fix for the v4.2 checkout bug deployed on August 29, 2026 [business_events.csv, Aug 2026]. While support metrics have stabilized, the company is still managing the fallout from the Q3 price increase and the August technical issues, which contributed to a net loss of 1,045 active customers in Q3 [revenue_by_month.csv, Q3 2026].
+
+**Follow-up question:** How is the win-back email campaign for churned SMB customers performing since its launch on September 15?",FAIL,Missing key fact: Billing tickets volume (930).
+7e47a7c31f,11,How is the Enterprise segment doing?,Growing steadily: Enterprise revenue about $4.67M in Q2 to $5.05M in Q3; active Enterprise customers about 642 to 690.,"The Enterprise segment is performing strongly, with revenue growing 8.2% in Q3 2026 compared to Q2 2026.
+
+Key drivers include:
+*   **Revenue Growth:** Enterprise revenue reached $5,049,200 in Q3 2026, up from $4,667,600 in Q2 2026 [revenue_by_month.csv, Q3 2026 vs Q2 2026].
+*   **Customer Base Expansion:** Active Enterprise customers grew to 690 by the end of Q3 2026, a 7.5% increase from 642 at the end of Q2 2026 [revenue_by_month.csv, Q3 2026 vs Q2 2026].
+*   **Strategic Marketing Shift:** The segment likely benefited from the July 2026 pivot in marketing strategy, where all social media spend was reallocated to Events to specifically target the Enterprise pipeline [business_events.csv, 2026-07-01].
+
+While new customer acquisition for Enterprise slowed slightly (63 in Q3 vs 69 in Q2), the segment remains a consistent growth engine for the company [revenue_by_month.csv, Q3 2026 vs Q2 2026].
+
+**Follow-up question:** Given the recent increase in Enterprise revenue, should we further increase the Events marketing budget to accelerate new customer acquisition in this segment?",PASS,All key facts present
+7e47a7c31f,12,Which region has the most revenue?,"West, about $4.75M in Q3 2026.","The West region generates the most revenue for Lumina Books, contributing $4,752,700 in Q3 2026 [revenue_by_month.csv, Q3 2026].
+
+The revenue breakdown for Q3 2026 by region is as follows:
+*   **West:** $4,752,700 (33.4% of total revenue)
+*   **East:** $4,096,300 (28.8% of total revenue)
+*   **Central:** $3,008,600 (21.2% of total revenue)
+*   **International:** $2,356,400 (16.6% of total revenue)
+
+These figures are derived from the sum of Enterprise and SMB segments for each region across July, August, and September 2026 [revenue_by_month.csv, Q3 2026].
+
+**Follow-up question:** How has the recent SMB price increase and the checkout bug in August impacted the customer retention rates specifically within the West region compared to other regions?",PASS,All key facts present
+7e47a7c31f,13,How much did we spend on marketing in September 2026 and on what?,"About $444K: Search ~$216K, Events ~$180K, Partners ~$48K, Social $0.","In September 2026, we spent a total of $444,000 on marketing, exclusively across Search, Events, and Partners.
+
+The spending breakdown is as follows:
+*   **Search:** $216,000 [marketing_spend.csv, 2026-09]
+*   **Events:** $180,000 [marketing_spend.csv, 2026-09]
+*   **Partners:** $48,000 [marketing_spend.csv, 2026-09]
+
+Social media spending was $0, as the company paused all social ads on July 1, 2026, to reallocate the budget toward the Enterprise pipeline [business_events.csv, 2026-07].
+
+**Follow-up question:** Given that new customer sign-ups have declined from 1,206 in June to 943 in September, should we re-evaluate the decision to pause social media advertising?",PASS,All key facts present
+7e47a7c31f,14,What is our customer acquisition cost for Enterprise deals?,"Should say the data does not include deal-level or Enterprise-specific acquisition cost, so it can't be calculated reliably; may mention what data is needed.","The provided data does not contain the specific marketing spend allocated to Enterprise versus SMB segments, so I cannot calculate an accurate Customer Acquisition Cost (CAC) for Enterprise deals.
+
+To calculate this, I would need:
+*   **Marketing spend by segment:** Currently, `marketing_spend.csv` only provides spend by channel, not by segment.
+*   **Sales team costs:** The current data only tracks marketing spend, excluding sales salaries, commissions, and overhead, which are significant components of Enterprise CAC.
+
+**Suggested follow-up:** ""Can we break down marketing spend by segment, or should we estimate Enterprise CAC by attributing a portion of the Events budget—which was increased to support the Enterprise pipeline—to those specific customer acquisitions?""",PASS,All key facts present
+7e47a7c31f,15,What is our profit margin?,"Should say the data has no cost or expense data beyond marketing, so profit margin can't be determined.","The provided data does not contain information regarding company expenses or profit margins, so I cannot calculate this for you.
+
+To determine our profit margin, I would need access to an income statement or a dataset detailing our operating costs, such as payroll, infrastructure, and overhead expenses, alongside the revenue data already provided.
+
+**Suggested follow-up question:** ""How has the recent SMB price increase and the checkout bug in August impacted our customer retention rates?""",PASS,All key facts present
+7e47a7c31f,16,How did the AI bookkeeping assistant launch affect revenue?,Should say the data doesn't isolate its impact; launched Apr 20 2026 (beta) with no visible change attributable to it. Must not invent an impact.,"The data cannot isolate the impact of the AI bookkeeping assistant launch on revenue, as revenue trends were simultaneously influenced by a significant SMB price increase and a major checkout bug.
+
+While the AI assistant was released on April 20, 2026 [business_events.csv], revenue performance in Q3 2026 was driven by these larger factors:
+
+*   **SMB Price Increase:** Revenue for the SMB segment rose from $8.09M in Q2 2026 to $9.16M in Q3 2026 [totals_by_quarter_and_segment.csv], a 13.3% increase, following the 15% price hike on July 1 [business_events.csv].
+*   **Checkout Bug:** A checkout bug affecting card payments occurred from August 12 to August 29 [business_events.csv], which likely contributed to the spike in ""Bugs"" support tickets (3,008 in August vs. 1,079 in July) and a drop in CSAT for that category to 73.9% [support_tickets.csv].
+*   **Churn Impact:** SMB churn increased significantly in Q3 (3,946 churned) compared to Q2 (2,308 churned) [totals_by_quarter_and_segment.csv], likely exacerbated by the price increase and the checkout technical issues.
+
+To isolate the AI assistant's impact, we would need data on feature adoption rates and revenue specifically attributed to AI-enabled accounts.
+
+**Follow-up question:** How has the win-back email campaign for churned SMB customers, started on September 15, performed in terms of recovery?",PASS,All key facts present
+7e47a7c31f,17,Give me a 3-bullet board summary for Q3 2026.,Three bullets covering: revenue up vs Q2 helped by the price increase; SMB customer base shrinking with churn up (esp. West) and fewer new customers; August checkout bug hurt support/CSAT but was fixed.,"Q3 2026 revenue grew 11.4% to $14.2M despite a significant spike in churn and a sharp decline in new customer acquisition.
+
+*   **Revenue Growth:** Total revenue reached $14.2M in Q3 2026, up 11.4% from $12.7M in Q2 2026 [revenue_by_month.csv, Q3 2026 vs Q2 2026]. This was driven by the 15% SMB price increase implemented on July 1, which offset the volume loss [business_events.csv, 2026-07-01].
+*   **Churn Surge:** Churn increased by 70.7%, rising from 2,321 in Q2 to 3,961 in Q3 [revenue_by_month.csv, Q3 2026 vs Q2 2026]. This was likely exacerbated by the July price hike and a checkout bug in August that caused support resolution times to spike to 27.3 hours and CSAT to drop to 73.9% for bugs [support_tickets.csv, 2026-08; business_events.csv, 2026-08-12].
+*   **Acquisition Decline:** New customer sign-ups fell 20% from 3,647 in Q2 to 2,916 in Q3 [revenue_by_month.csv, Q3 2026 vs Q2 2026]. This decline followed the July 1 decision to pause all Social media advertising, which previously generated ~1,900 leads per quarter [marketing_spend.csv, 2026 Q3 vs Q2].
+
+**Follow-up question:** How has the win-back campaign for churned SMB customers, launched on September 15, performed in terms of conversion rates to date?",PASS,All key facts present
+7e47a7c31f,18,What should we do about West region SMB churn?,"Should ground suggestions in data (West SMB churn more than doubled after the price increase) and note the win-back campaign started Sep 15; any recommendation framed as a suggestion, not data.","West region SMB churn has spiked significantly, likely driven by the July price increase and the August checkout bug.
+
+**Key Drivers:**
+*   **Churn Surge:** West SMB churn rose from 256 in June to 557 in July (+117%) and remained elevated at 513 in September [revenue_by_month.csv].
+*   **Price Sensitivity:** The 15% SMB price hike on July 1 coincided with a sharp drop in new SMB customers across the company (from 1,206 in June to 969 in July) [revenue_by_month.csv, business_events.csv].
+*   **Technical Friction:** The v4.2 checkout bug (Aug 12–29) caused support tickets for ""Bugs"" to spike to 3,008 in August with resolution times ballooning to 27.3 hours and CSAT dropping to 73.9% [support_tickets.csv, business_events.csv].
+
+**Suggestions:**
+1.  **Targeted Retention:** Leverage the win-back campaign started in mid-September to specifically target West region customers who churned during the August technical outage.
+2.  **Service Recovery:** Prioritize outreach to West SMBs who experienced failed payments during the August bug to restore trust.
+3.  **Evaluate Pricing:** Analyze if the 15% increase is sustainable for the West region, given that churn has not returned to pre-July levels.
+
+**Follow-up question:** How does the current win-back campaign's conversion rate in the West region compare to other regions?",PASS,All key facts present
