@@ -1,5 +1,6 @@
 # Executive Briefing Assistant
 **[▶ Try the live demo](https://prasanticn-exec-briefing.streamlit.app/)** (no sign-up needed)
+
 Executives get a stack of dashboards every week but still can't quickly answer *"why did this number move?"*
 This assistant answers business questions in plain English, such as *"Why are we losing SMB customers?"*, with an
 executive-style briefing: a headline, the 2-4 drivers with numbers, a source for every number, and a suggested follow-up.
