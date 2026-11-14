@@ -2,7 +2,7 @@
 
 Usage:  python evals/run_evals.py
 Writes evals/results.csv and prints the pass rate. Re-run after every prompt change
-and record the score in your portfolio write-up (e.g. "v1: 13/18 -> v2: 17/18").
+and record the score in evals/EVAL_LOG.md.
 It pauses between calls to stay under the free tier's per-minute limit, so a full run takes about 5 minutes.
 
 If Google's servers are busy (503) or the per-minute limit is hit, it waits and retries automatically.
