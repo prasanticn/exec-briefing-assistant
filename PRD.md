@@ -1,9 +1,9 @@
 # PRD: Executive Briefing Assistant
 
-*Draft by Prasanti C. N. · v0.1 · Fill in the [brackets] with your own words and results.*
+*Prasanti C. N. · v1.0*
 
 ## 1. Problem
-Executives get 6+ dashboards a week but still can't quickly answer "why did this number move?" Getting an answer means pinging an analyst, which takes [1-3 days]. At Intuit I saw this firsthand while consolidating dashboards for VP/SVP planning reviews.
+Executives get 6+ dashboards a week but still can't quickly answer "why did this number move?" Getting an answer means pinging an analyst, which takes 1-3 days. At Intuit I saw this firsthand while consolidating dashboards for VP/SVP planning reviews.
 
 ## 2. Target user
 **Primary:** VP / SVP of a business unit preparing for a weekly business review or board meeting.
@@ -15,7 +15,7 @@ Executives get 6+ dashboards a week but still can't quickly answer "why did this
 | Fast answers | Time from question to answer | < 30 seconds (vs. 1-3 days via analyst) |
 | Trustworthy answers | % of test questions answered correctly with sources | ≥ 85% on the 18-question eval set |
 | No made-up numbers | % of "unanswerable" questions where the assistant says it can't answer | 100% |
-| Adoption (if piloted) | Weekly active execs / invited execs | [40%] in first quarter |
+| Adoption (if piloted) | Weekly active execs / invited execs | 40% in first quarter |
 
 ## 4. Key user stories
 1. As a VP, I ask "how did Q3 go?" and get a headline, the 2-4 drivers with numbers, and sources.
@@ -51,7 +51,7 @@ Company data (CSV) → exact quarterly and monthly totals computed in code (pand
 - Model choice is a product trade-off: Gemini 3.8 Flash answered 14/14 correctly but allows 20 free requests a day; Flash-Lite reached 16/18 with ~500 a day. I shipped Flash-Lite.
 
 ## 9. Launch plan (if this were real)
-Phase 1: pilot with [5] execs for weekly reviews → Phase 2: add live data sources → Phase 3: scheduled Monday-morning briefing emails. Adoption driven with the ADKAR change approach: awareness via a demo in staff meeting, ability via a 10-minute walkthrough.
+Phase 1: pilot with 5 execs for weekly reviews → Phase 2: add live data sources → Phase 3: scheduled Monday-morning briefing emails. Adoption driven with the ADKAR change approach: awareness via a demo in staff meeting, ability via a 10-minute walkthrough.
 
 ## 10. What I'd build next
 - **Tool use for the math:** let the model call a calculation/SQL tool for any total, instead of pre-computing a fixed set of tables. This scales to real data that won't fit in a prompt.
