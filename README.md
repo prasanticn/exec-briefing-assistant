@@ -49,6 +49,10 @@ All 3 "the data can't answer this" questions are answered correctly: no invented
 | `PRD.md` | Product requirements: problem, users, success metrics, risks, launch plan |
 | `data/`, `make_data.py` | The fictional dataset and the script that generates it |
 
+## How I built it
+I used Claude (Anthropic) as an AI coding partner for the code. I owned the product requirements, the evaluation
+design, running and reviewing every test, and the model decisions.
+
 ## Run it yourself
 ```
 pip install -r requirements.txt
